@@ -1,0 +1,152 @@
+
+PRÁCTICA 1 : 
+
+Introduccion: Este informe se enfoca en el problema de ordenar vectores de números enteros en orden ascendente, descendente y aleatorio. Para abordar esta problemática, utilizaremos dos algoritmos de ordenación: la Ordenación por Inserción y la Ordenación Shell. El objetivo del informe es comprender estos algoritmos, explorar su eficiencia en diferentes situaciones y evaluar su aplicación en la optimización de procesos de ordenación de datos.
+
+
+Máquina con la que se realizan las pruebas: 
+-Sistema Operativo: Linux Mint 21.2 Cinnamon.
+-Núcleo Linux: 5.15.0-84-generic.
+-Procesador: 11th Gen Intel© Core™ i7-1195G7 @ 2.90GHz × 4.
+
+El cálculo de los tiempos de las columnas t(n) están medidos en microsegundos.
+  
+Ordenacion por insercion con inicializacion aleatoria
+    n                     t(n)                 t(n)/n^1.8               t(n)/n^2               t(n)/n^2.2
+   500(*)	        118.354		        0.00164		        0.00047		        0.00014	
+
+  1000(*)	        465.580		        0.00185		        0.00047		        0.00012	
+
+  2000		       1842.000		        0.00211		        0.00046		        0.00010	
+
+  4000		       7441.000		        0.00244		        0.00047		        0.00009	
+
+  8000		      29586.000		        0.00279		        0.00046		        0.00008	
+
+ 16000		     116851.000		        0.00316		        0.00046		        0.00007	
+
+ 32000		     469857.000		        0.00365		        0.00046		        0.00006	
+
+La cota subestimada es n^1.8
+La cota ajustada es n^2
+La cota sobreestimada es n^2.2
+La sucesión de la cota ajustada tiende a 0.00046
+
+
+Ordenacion por insercion con inicializacion descendente
+    n                     t(n)                 t(n)/n^1.8               t(n)/n^2               t(n)/n^2.2
+   500(*)	        232.262		        0.00322		        0.00093		        0.00027	
+
+  1000		        934.000		        0.00372		        0.00093		        0.00023	
+
+  2000		       3667.000		        0.00419		        0.00092		        0.00020	
+
+  4000		      14756.000		        0.00484		        0.00092		        0.00018	
+
+  8000		      58995.000		        0.00556		        0.00092		        0.00015	
+
+ 16000		     234445.000		        0.00635		        0.00092		        0.00013	
+
+ 32000		     940048.000		        0.00731		        0.00092		        0.00012	
+
+
+La cota subestimada es n^1.8
+La cota ajustada es n^2
+La cota sobreestimada es n^2.2
+La sucesión de la cota ajustada tiende a 0.00092
+
+
+Ordenacion por insercion con inicializacion ascendente
+    n                     t(n)                 t(n)/n^0.8               t(n)/n^1               t(n)/n^1.2
+   500(*)	          1.140		        0.00790		        0.00228		        0.00066	
+
+  1000(*)	          2.262		        0.00901		        0.00226		        0.00057	
+
+  2000(*)	          4.381		        0.01002		        0.00219		        0.00048	
+
+  4000(*)	          8.840		        0.01161		        0.00221		        0.00042	
+
+  8000(*)	         17.817		        0.01344		        0.00223		        0.00037	
+
+ 16000(*)	         34.791		        0.01507		        0.00217		        0.00031	
+
+ 32000(*)	         70.823		        0.01762		        0.00221		        0.00028	
+
+
+La cota subestimada es n^0.8
+La cota ajustada es n^1
+La cota sobreestimada es n^1.2
+La sucesión de la cota ajustada tiende a 0.0022
+
+Ordenacion shell con inicializacion aleatoria
+    n                     t(n)                 t(n)/n^1.0               t(n)/n^1.2             t(n)/n^1.4
+   500(*)	         38.796		        0.07759		        0.02239		        0.00646	
+
+  1000(*)	         90.741		        0.09074		        0.02279		        0.00573	
+
+  2000(*)	        207.823		        0.10391		        0.02272		        0.00497	
+
+  4000(*)	        474.101		        0.11853		        0.02256		        0.00430	
+
+  8000		       1074.000		        0.13425		        0.02225		        0.00369	
+
+ 16000		       2441.000		        0.15256		        0.02201		        0.00318	
+
+ 32000		       5609.000		        0.17528		        0.02201		        0.00276	
+
+La cota subestimada es n^1.0
+La cota ajustada es n^1.2
+La cota sobreestimada es n^1.4
+La sucesión de la cota ajustada tiende a 0.022
+
+
+OOrdenacion shell con inicializacion descendente
+    n                     t(n)                 t(n)/n^0.94              t(n)/n^1.14            t(n)/n^1.34
+   500(*)	         15.091		        0.04382		        0.01264		        0.00365	
+
+  1000(*)	         34.117		        0.05164		        0.01297		        0.00326	
+
+  2000(*)	         75.741		        0.05975		        0.01307		        0.00286	
+
+  4000(*)	        166.884		        0.06862		        0.01306		        0.00249	
+
+  8000(*)	        363.025		        0.07781		        0.01289		        0.00214	
+
+ 16000		        791.000		        0.08837		        0.01275		        0.00184	
+
+ 32000		       1701.000		        0.09905		        0.01244		        0.00156	
+
+
+La cota subestimada es n^0.94
+La cota ajustada es n^1.14
+La cota sobreestimada es n^1.34
+La sucesión de la cota ajustada tiende a 0.012
+
+
+Ordenacion shell con inicializacion ascendente
+    n                     t(n)                 t(n)/n^0.94              t(n)/n^1.14            t(n)/n^1.34
+   500(*)	          9.835		        0.02856		        0.00824		        0.00238	
+
+  1000(*)	         22.306		        0.03376		        0.00848		        0.00213	
+
+  2000(*)	         50.029		        0.03947		        0.00863		        0.00189	
+
+  4000(*)	        111.812		        0.04598		        0.00875		        0.00167	
+
+  8000(*)	        240.911		        0.05164		        0.00856		        0.00142	
+
+ 16000		        515.000		        0.05754		        0.00830		        0.00120	
+
+ 32000		       1112.000		        0.06475		        0.00813		        0.00102	
+
+
+La cota subestimada es n^0.94
+La cota ajustada es n^1.14
+La cota sobreestimada es n^1.34
+La sucesión de la cota ajustada tiende a 0.008
+
+
+(*):El calculo del tiempo se realiza mediante bucles de 1000 iteraciones ya que presentan un tiempo inferior al intervalo de confianza (500ms).
+
+
+Conclusiones: En general, la ordenación Shell muestra una eficiencia superior a la ordenación por inserción, especialmente en conjuntos de datos más grandes. En cambio, la ordenación por inserción con datos aleatorios tiende a comportarse cuadráticamente, mientras que con datos ascendentes se vuelve más eficiente. Estos resultados son útiles para optimizar procesos de ordenación de datos en diversas aplicaciones.

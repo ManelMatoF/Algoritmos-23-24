@@ -1,0 +1,137 @@
+
+PRÁCTICA 3 : 
+
+Introduccion: En este informe, se abordan implementaciones de operaciones sobre montículos de mínimos. Las funciones clave incluyen la creación de montículos a partir de un
+vector dado, y la aplicación de la ordenación por montículos. Además, se realiza un análisis del rendimiento de la creación de montículos, demostrando su complejidad O(n).
+Por último, se evalúa la eficiencia del algoritmo de ordenación en tres casos: vector ordenado ascendentemente, descendentemente y de forma aleatoria.
+
+
+Máquina con la que se realizan las pruebas: 
+-Sistema Operativo: Linux Mint 21.2 Cinnamon.
+-Núcleo Linux: 5.15.0-84-generic.
+-Procesador: 11th Gen Intel© Core™ i7-1195G7 @ 2.90GHz × 4.
+
+El cálculo de los tiempos de las columnas t(n) están medidos en microsegundos.
+
+(*):Cálculo del tiempo promedio que se realiza mediante bucles de 1000 iteraciones ya que presentan un tiempo inferior al intervalo de confianza (500ms).
+(A):Mediciones anómalas, que se han tratado de impedir.
+
+Comprobacion de que CrearMonticulo tiene complejidad lineal
+    n                 t(n)                 t(n)/n^0.8               t(n)/n^1               t(n)/n^1.2
+   500(*)             7.669                0.053157                0.015338                0.004426   
+
+  1000(*)            14.411                0.057371                0.014411                0.003620   
+
+  2000(*)            28.880                0.066035                0.014440                0.003158   
+
+  4000(*)            57.138                0.075037                0.014285                0.002719   
+
+  8000(*)           113.112                0.085317                0.014139                0.002343   
+
+ 16000(*)           223.963                0.097024                0.013998                0.002019   
+
+ 32000(*)           442.714                0.110155                0.013835                0.001738   
+
+ 64000              941.000                0.134476                0.014703                0.001608   
+
+128000              1877.000               0.154062                0.014664                0.001396   
+
+256000              3776.000               0.178008                0.014750                0.001222   
+
+La complejidad de  CrearMonticulo se considera lineal (O(n)) porque el tiempo de ejecución crece proporcionalmente al tamaño del vector de entrada (n). 
+En la tabla de resultados, se observa que a medida que el tamaño del vector aumenta, el tiempo de ejecución también aumenta de manera constante y proporcional.
+
+La cota subestimada es n^0.8
+La cota ajustada es n^1
+La cota sobreestimada es n^1.2
+La sucesión de la cota ajustada tiende a 0.0147
+
+
+Ordenacion por monticulos con inicializacion aleatoria
+    n                t(n)                 t(n)/n^0.90              t(n)/n^1.10             t(n)/n^1.30
+   500(*)            48.097                0.179079                0.051671                0.014909   
+
+  1000(*)           106.858                0.213210                0.053556                0.013453   
+
+  2000(*)           234.399                0.250628                0.054805                0.011984   
+
+  4000              516.000                0.295662                0.056284                0.010714   
+
+  8000              1094.000               0.335920                0.055670                0.009226   
+
+ 16000              2357.000               0.387839                0.055954                0.008072   
+
+ 32000              5021.000               0.442747                0.055606                0.006984   
+
+ 64000              10744.000              0.507696                0.055510                0.006069   
+
+128000              23186.000              0.587133                0.055885                0.005319   
+
+256000              52652.000              0.714495                0.059204                0.004906   
+
+La cota subestimada es n^0.90
+La cota ajustada es n^1.10
+La cota sobreestimada es n^1.30
+La sucesión de la cota ajustada tiende a 0.0555
+
+
+Ordenacion por monticulos con inicializacion ascendente
+    n                t(n)                 t(n)/n^0.87              t(n)/n^1.07             t(n)/n^1.27
+   500(*)            23.159                0.103900                0.029979 (A)            0.008650   
+
+  1000(*)            69.440                0.170455                0.042816 (A)            0.010755   
+
+  2000(*)           176.445                0.236981                0.051821                0.011332   
+
+  4000(*)           388.328                0.285369                0.054324                0.010341   
+
+  8000              831.000                0.334128                0.055373                0.009176   
+
+ 16000              1748.000               0.384554                0.055480                0.008004   
+
+ 32000              3722.000               0.448018                0.056269                0.007067   
+
+ 64000              7837.000               0.516147                0.056434                0.006170   
+
+128000              16417.000              0.591590                0.056309                0.005360   
+
+256000              35133.000              0.692702                0.057398                0.004756   
+
+La cota subestimada es n^0.87
+La cota ajustada es n^1.07
+La cota sobreestimada es n^1.27
+La sucesión de la cota ajustada tiende a 0.0563
+
+
+Ordenacion por monticulos con inicializacion descendente
+    n                t(n)                 t(n)/n^0.87              t(n)/n^1.07             t(n)/n^1.27
+   500(*)            27.654                0.124066                0.035798 (A)            0.010329   
+
+  1000(*)            74.805                0.183625                0.046124 (A)            0.011586   
+
+  2000(*)           185.524                0.249175                0.054488                0.011915   
+
+  4000(*)           399.741                0.293756                0.055921                0.010645   
+
+  8000              851.000                0.342169                0.056705                0.009397   
+
+ 16000              1799.000               0.395774                0.057098                0.008238   
+
+ 32000              3819.000               0.459694                0.057735                0.007251   
+
+ 64000              7979.000               0.525499                0.057456                0.006282   
+
+128000              16711.000              0.602185                0.057318                0.005456   
+
+256000              35258.000              0.695167                0.057602                0.004773  
+
+La cota subestimada es n^0.87
+La cota ajustada es n^1.07
+La cota sobreestimada es n^1.27
+La sucesión de la cota ajustada tiende a 0.0575
+ 
+
+Conclusión: En primer lugar, la operación crearMonticulo muestra una complejidad lineal (O(n)), respaldada por los resultados que evidencian un crecimiento proporcional en el tiempo de ejecución al aumentar
+el tamaño del vector de entrada. Las cotas subestimada, ajustada y sobreestimada confirman la linealidad de la función. En cuanto a la operación ordenarPorMonticulos, la estrategia de inicialización aleatoria
+posee tiempos de ejecución más altos en comparación con la inicialización ascendente y descendente. Esto sugiere que, la inicialización aleatoria no sea tan eficiente como las otras dos inicializaciones. 
+Por otro lado, la inicialización ascendente y descendente muestran tiempos similares. Ambas estrategias se comportan de manera bastante parecida a medida que el tamaño de entrada (n) aumenta.

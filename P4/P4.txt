@@ -1,0 +1,44 @@
+
+PRÁCTICA 4 : 
+
+Introducción: Este informe aborda la implementación del algoritmo de Dijkstra para calcular distancias mínimas en grafos ponderados. Se validará la implementación con casos de prueba específicos y además se calculará empíricamente la complejidad computacional utilizando grafos generados aleatoriamente.
+
+
+Máquina con la que se realizan las pruebas: 
+-Sistema Operativo: Linux Mint 21.2 Cinnamon.
+-Núcleo Linux: 5.15.0-84-generic.
+-Procesador: 11th Gen Intel© Core™ i7-1195G7 @ 2.90GHz × 4.
+
+El cálculo de los tiempos de las columnas t(n) están medidos en microsegundos.
+
+(*):Cálculo del tiempo promedio que se realiza mediante bucles de 1000 iteraciones ya que presentan un tiempo inferior al intervalo de confianza (500ms).
+n : Tamaño del grafo.
+
+
+Comprobacion empirica de la complejidad de dijkstra
+     n                   t(n)                 t(n)/n^2.6              t(n)/n^2.8              t(n)/n^3.0
+    15(*)	         30.765		       0.026929		       0.015668		       0.009116	
+
+    30(*)	        222.615		       0.032140		       0.015279		       0.008245	
+
+    60		       1496.000		       0.035624		       0.015708		       0.006926	
+
+    120		      10159.000		       0.039901		       0.015316		       0.005879	
+
+    240		      68574.000		       0.044423		       0.014845		       0.004961	
+
+    480		     488335.000		       0.052178		       0.015179		       0.004416	
+
+    960		    3624865.000		       0.063883		       0.016178		       0.004097	
+ 
+
+La cota subestimada es n^2.6
+La cota ajustada es n^2.8
+La cota sobreestimada es n^3.0
+La sucesión de la cota ajustada tiende a 0.0155
+
+
+Conclusión: Tras realizar el análisis empírico de la complejidad del algoritmo de 
+Dijkstra, se observa que los tiempos de ejecución siguen una tendencia que se ajusta
+a una complejidad cuadrática, aproximándose a n^2.8. Este comportamiento presenta 
+una diferencia en comparación con la complejidad teórica del algoritmo, O(n^2).
